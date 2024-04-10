@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '~layouts/Layout.astro'
+import Container from '~components/Container.astro'
+import PostList from '~components/PostList.astro'
+
+const posts = await getCollection('posts')
+---
+
+<Layout title="Posts">
+    <Container>
+        <PostList
+            class:list={['mt-8']}
+            posts={posts}
+        />
+    </Container>
+</Layout>
